@@ -20,6 +20,7 @@
     </style>
     <script>
       let map;
+      let infoWindow;
       var labels = {
         Plumber: "P",
         Electrician: "E",
@@ -37,9 +38,8 @@
         }); 
         // Create a <script> tag and set the USGS URL as the source.
         const script = document.createElement("script");
-        // This example uses a local copy of the GeoJSON stored at
-        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        //infoWindow = new google.maps.InfoWindow
+
+        infoWindow = new google.maps.InfoWindow
 
         script.src = "points.js";
         document.getElementsByTagName("head")[0].appendChild(script);
@@ -52,9 +52,10 @@
       const eqfeed_callback = function (results) {
 
         for (let i = 0; i < results.features.length; i++) {
-          const coords = results.features[i].geometry.coordinates;
-          const latLng = new google.maps.LatLng(coords[1], coords[0]);
-          /*var infowincontent = document.createElement('div');
+
+          var coords = results.features[i].geometry.coordinates;
+          var latLng = new google.maps.LatLng(coords[1], coords[0]);
+          var infowincontent = document.createElement('div');
           var strong = document.createElement('strong');
           strong.textContent = results.features[i].properties.Service
           infowincontent.appendChild(strong);
@@ -62,7 +63,7 @@
 
           var text = document.createElement('text');
           text.textContent = results.features[i].properties["Contact Info"];
-          infowincontent.appendChild(text);*/
+          infowincontent.appendChild(text);
 
           var marker = new google.maps.Marker({
             position: latLng,
