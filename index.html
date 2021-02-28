@@ -43,24 +43,24 @@
 <body>
 
 <div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content" text-color = "blue">
-    <form method="post">
-  Name: <input type="text" name="name" value="">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><br/>&times;</a>
+  <div class="overlay-content">
+    <form method="post"><span color = "white" style="font-size:25px">
+  Name: </span>&nbsp;</span> <input type="text" name="name" value="">
   <span class="error">* </span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="">
+  <br><br><span style="font-size:25px">
+  E-mail: </span>&nbsp; <input type="text" name="email" value="">
   <span class="error">* </span>
-  <br><br>
-  Phone Number: <input type="text" name="phonenumber" value="">
+  <br><br><span style="font-size:25px">
+  Phone Number: </span>&nbsp; <input type="text" name="phonenumber" value="">
     <span class="error">*</span>
-    <br><br>
-  Website: <input type="text" name="website" value="">
+    <br><br><span style="font-size:25px">
+  Website:  </span>&nbsp;<input type="text" name="website" value="">
   <span class="error"></span>
-  <br><br>
-  Help Required: <textarea name="comment" rows="5" cols="40" background-color = "#707070"></textarea>
-  <br><br>
-  Service: &nbsp;&nbsp;
+  <br><br><span style="font-size:25px">
+  Help Required:</span>&nbsp; <textarea name="comment" rows="5" cols="40" background-color = "#707070"></textarea>
+  <br><br><span style="font-size:25px">
+  Service:&nbsp;&nbsp;</span>
   <input type="radio" name="service" <?php if (isset($service) && $service=="plumbing") echo "checked";?>&nbsp;plumbing &nbsp;&nbsp;
   <input type="radio" name="service" <?php if (isset($service) && $service=="electrcity") echo "checked";?>&nbsp;electricity &nbsp;&nbsp;
   <input type="radio" name="service" <?php if (isset($service) && $service=="roofing") echo "checked";?>&nbsp;roofing &nbsp;&nbsp;
@@ -68,10 +68,46 @@
   <input type="radio" name="service" <?php if (isset($service) && $service=="gardening") echo "checked";?>&nbsp;gardening &nbsp;&nbsp;
   <input type="radio" name="service" <?php if (isset($service) && $service=="carpentry") echo "checked";?>&nbsp;carpentry &nbsp;&nbsp;
   <br><br>
-  <input type="submit" name="submit" value="Submit" onclick="openSub()">
+  <input type="submit" name="submit" value="Submit">
 </form>
   </div>
 </div>
+
+
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()"><br>&times;</a>
+  <div class="overlay-content">
+    <form method="post"><span color = "white" style="font-size:25px">
+  Name:&nbsp;</span> <input type="text" name="name" value="">
+  <span class="error">* </span>
+  <br><br><span style="font-size:25px">
+  E-mail:&nbsp; </span><input type="text" name="email" value="">
+  <span class="error">* </span>
+  <br><br><span style="font-size:25px">
+  Phone Number:&nbsp;</span> <input type="text" name="phonenumber" value="">
+    <span class="error">*</span>
+    <br><br><span style="font-size:25px">
+  Website: &nbsp;</span><input type="text" name="website" value="">
+  <span class="error"></span>
+  <br><br><span style="font-size:25px">
+  Help Required:&nbsp;</span> <textarea name="comment" rows="5" cols="40" background-color = "#707070"></textarea>
+  <br><br><span style="font-size:25px">
+  What service do you provide: </span>&nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="plumbing") echo "checked";?>&nbsp;plumbing &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="electrcity") echo "checked";?>&nbsp;electricity &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="roofing") echo "checked";?>&nbsp;roofing &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="landscaping") echo "checked";?>&nbsp;landscaping &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="gardening") echo "checked";?>&nbsp;gardening &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="carpentry") echo "checked";?>&nbsp;carpentry &nbsp;&nbsp;
+  <br><br>
+  <input type="submit" name="submit" value="Submit">
+</form>
+  </div>
+</div>
+
+
+
     
 </div>
   <!-- ======= Header ======= -->
@@ -200,7 +236,7 @@
               <h3>Plumbing</h3>
               <p>Connecting plumbers to anything that disrupts our daily flow.</p>
               <a onclick="openNav()" class="read-more"><span>Make a Request</span> <i class="bi bi-arrow-right"></i></a>
-              <a href="./map.html" target="_blank" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
+              <a onclick="openNav2()" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -210,7 +246,7 @@
               <h3>Electricity</h3>
               <p>Connecting y'all with electricians to bring more power to Texans in need.</p>
               <a href="#" onclick="openNav()" class="read-more"><span>Make a Request</span> <i class="bi bi-arrow-right"></i></a>
-              <a href="./map.html" target="_blank" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
+              <a onclick="openNav2()"  class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -220,7 +256,7 @@
               <h3>Roofing</h3>
               <p>Snow and ice can wreak havoc on older roofs. We'll get you the help you need.</p>
               <a onclick="openNav()"class="read-more"><span>Make a Request</span> <i class="bi bi-arrow-right"></i></a>
-              <a href="./map.html" target="_blank" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
+              <a onclick="openNav2()"  class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -230,7 +266,7 @@
               <h3>Landscaping</h3>
               <p>Your lawn is vulernable during this weather, get help to keep it healthy.</p>
               <a onclick="openNav()"class="read-more"><span>Make a Request</span> <i class="bi bi-arrow-right"></i></a>
-              <a href="./map.html" target="_blank" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
+              <a onclick="openNav2()"  class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -240,7 +276,7 @@
               <h3>Gardening</h3>
               <p>Get help from a specialist to care for your outdoor and house plants.</p>
               <a onclick="openNav()"class="read-more"><span>Make a Request</span> <i class="bi bi-arrow-right"></i></a>
-              <a href="./map.html" target="_blank" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
+              <a onclick="openNav2()" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -250,7 +286,7 @@
               <h3>Carpentry</h3>
               <p>Bringing carpenters to those in need so we can rebuild Texas together.</p>
               <a onclick="openNav()"class="read-more"><span>Make a Request</span> <i class="bi bi-arrow-right"></i></a>
-              <a href="./map.html" target="_blank" class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
+              <a onclick="openNav2()"  class="read-more"><span>I can help!</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -300,6 +336,18 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 </script>
+
+
+<script>
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+</script>
+
 
   
 </body>
