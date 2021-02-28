@@ -42,6 +42,38 @@
 
 <body>
 
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content" text-color = "blue">
+    <form method="post">
+  Name: <input type="text" name="name" value="">
+  <span class="error">* </span>
+  <br><br>
+  E-mail: <input type="text" name="email" value="">
+  <span class="error">* </span>
+  <br><br>
+  Phone Number: <input type="text" name="phonenumber" value="">
+    <span class="error">*</span>
+    <br><br>
+  Website: <input type="text" name="website" value="">
+  <span class="error"></span>
+  <br><br>
+  Help Required: <textarea name="comment" rows="5" cols="40" background-color = "#707070"></textarea>
+  <br><br>
+  Service: &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="plumbing") echo "checked";?>&nbsp;plumbing &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="electrcity") echo "checked";?>&nbsp;electricity &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="roofing") echo "checked";?>&nbsp;roofing &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="landscaping") echo "checked";?>&nbsp;landscaping &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="gardening") echo "checked";?>&nbsp;gardening &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="carpentry") echo "checked";?>&nbsp;carpentry &nbsp;&nbsp;
+  <br><br>
+  <input type="submit" name="submit" value="Submit" onclick="openSub()">
+</form>
+  </div>
+</div>
+    
+</div>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -66,6 +98,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
 
+
+  </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -75,15 +109,11 @@
             <div class="text-center text-lg-start">
                   <div class="g-signin2 signin" data-onsuccess="onSignIn" data-theme="dark"></div>
             </div>
-              <a href="./ashwinsform.php" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" onclick="openNav()">
                 <span>Ashwin's Old Form</span>
                 <i class="bi bi-arrow-right"></i>
+                
               </a>
-              <a style = "margin-top: 5px;" href="./form.php" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>New Form</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-
           </div>
         <div class="container counts" data-aos="fade-up">
 
@@ -134,14 +164,8 @@
                   Those that need assistance with services can post a request with us. Anyone that's handy and ready to help out their fellow Texans can see the requests in their area. By connecting helpers with problems in a centralized platform, we can rebuild our community smarter and faster.
               </p>
               <div class="text-center text-lg-start">
-                <a href="./form.php" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Request Help</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-              <div class="text-center text-lg-start">
-                <a style="margin-top: 5px;" href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>View Map</span>
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -270,6 +294,17 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+  
 </body>
 
 </html>
