@@ -1,0 +1,67 @@
+/* Title */
+#title {
+    position: absolute;
+    height: 132px;
+    left: 0px;
+    right: 0.37px;
+    top: 0px;
+}
+
+.Medium50 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 66px;
+}
+
+/* Colour/Main/Blue/900 */
+.Blue900{
+    color: #091133;
+}
+
+#body {
+    position: absolute;
+    height: 90px;
+    left: 0px;
+    right: 0.37px;
+    top: 152px;
+}
+
+.Regular18 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+/* Colour/Main/Blue/500 */
+.Blue500{
+color: #505F98;
+}
+
+#signin {
+    position: absolute;
+    left: 11.33%;
+    right: 75.54%;
+    top: 14.87%;
+    bottom: 84.36%;
+}
+/* Hero */
+#Hero {
+    position: absolute;
+    left: -0.28%;
+    right: -45%;
+    top: -1.1%;
+    bottom: 76.02%;
+}
+
+/* Hero-Content */
+#HeroContent {
+    position: absolute;
+    left: 11.33%;
+    right: 51.15%;
+    top: 6.55%;
+    bottom: 84.36%;
+}
