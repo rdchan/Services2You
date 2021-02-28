@@ -7,6 +7,13 @@ let map;
         Carpenter: "C",
         Roofing: "R"
       }
+      var icons = {
+        Plumber: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+        Electrician: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+        Landscaping: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+        Carpenter: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+        Roofing: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+      }
 
 
 
@@ -47,7 +54,10 @@ let map;
           var marker = new google.maps.Marker({
             position: latLng,
             map: map,
-            label: labels[results.features[i].properties.Service]
+      //      label: labels[results.features[i].properties.Service],
+              icon: {
+                url: icons[results.features[i].properties.Service]
+              }
           });
 
 
