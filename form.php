@@ -33,6 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
     
+    if (empty($_POST["phonenumber"])) {
+      $comment = "Phone Number is Required";
+    } else {
+    $phonenumber = test_input($_POST["phonenumber"]);
+    if (!preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $phonenumber)) {
+      $phoneErr = "Invalid phone format";
+    }
+    }
+    
+    
   if (empty($_POST["website"])) {
     $website = "";
   } else {
@@ -73,6 +83,9 @@ function test_input($data) {
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
+  Phone Number: <input type="text" name="phonenumber" value="<?php echo $phonenumber;?>">
+    <span class="error">* <?php echo $phoneErr;?></span>
+    <br><br>
   Website: <input type="text" name="website" value="<?php echo $website;?>">
   <span class="error"><?php echo $websiteErr;?></span>
   <br><br>
@@ -89,17 +102,15 @@ function test_input($data) {
 
 <?php
 try {
-    $dbh = new PDO('postgres://jonathan@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/app?sslmode=verify-full&sslrootcert=/Users/hansikasundaresan/Documents/hackutd2021/cc-ca.crt&options=--cluster=mild-bat-982',
-    'app', null, array(
+    $dbh = new PDO('postgres://jonathan:fa5_U2QXC-AuCGoc@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=/Users/hansikasundaresan/Documents/hackutd2021/cc-ca.crt&options=--cluster=sweet-iguana-995',
+    'maxroach', null, array(
       PDO::ATTR_ERRMODE          => PDO::ERRMODE_EXCEPTION,
       PDO::ATTR_EMULATE_PREPARES => true,
       PDO::ATTR_PERSISTENT => true
     ));
-    
-  
-  $dbh->exec('INSERT INTO app.provider (id, name, phonenumber, email) VALUES (($_GET["id"];, $_GET["name"];, $_GET["phonenumber"];, $_GET["email"];)');
-    
-  foreach ($dbh->query('SELECT id, name, phonenumber, email FROM app.provider') as $row) {
+
+  print "Account balances:\r\n";
+  foreach ($dbh->query('SELECT id, name, phonenumber, email FROM defaultdb.users') as $row) {
       print $row['id'] . ': ' . $row['name'] . ': ' . $row['phonenumber'] . $row['email'] . "\r\n";
   }
 } catch (Exception $e) {
