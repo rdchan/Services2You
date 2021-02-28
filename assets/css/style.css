@@ -32,10 +32,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input[type=text] {
-  background-color: #707070;
+  background-color:#F5F5F5;
   color: blue;
   border-radius: 5px;
-   border: 1px solid #707070;
+   border: 1px solid rgba(192,192,192,0.3);
 }
 
 /*--------------------------------------------------------------
@@ -88,24 +88,28 @@ section {
   top: 0;
   left: 0;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
+  background-color: rgba(0,0,255,0.3);
   overflow-x: hidden;
   transition: 0.5s;
 }
+
 
 .overlay-content {
   position: relative;
   top: 25%;
   width: 100%;
   text-align: center;
+  color:white;
+  font-weight: bold;
   margin-top: 30px;
 }
 
 .overlay a {
   padding: 8px;
   text-decoration: none;
-  font-size: 36px;
-  color: #818181;
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
   display: block;
   transition: 0.3s;
 }
