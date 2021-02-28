@@ -149,7 +149,7 @@
                 <span>Request Help</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
-              <a class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" href="./map.html" target="_blank">
+              <a class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" href="#map">
                 <span>View Map</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -295,8 +295,44 @@
       </div>
 
     </section><!-- End Services Section -->
-
+<br><br>
     <!-- pricing section gone-->
+    
+    <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h2>MAP</h2>
+      <p>Scroll through the map to meet your necessary servicer</p><br>
+      <h2>Click on the full screen button in the top right corner to view the whole map.</h2>
+    </header>
+    
+    
+    
+    <section id="map" class="map" height="200">
+        
+
+           <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+           <style type="text/css">
+             /* Always set the map height explicitly to define the size of the div
+              * element that contains the map. */
+             #map {
+               height: 200px;
+               width: 100%;
+               
+             }
+           </style>
+           <script src="map.js"></script>
+
+           <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+           <script
+             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmG6UTTn6EVWz3wEBQCYmLvSybLofmv2c&callback=initMap&libraries=&v=weekly"
+             async
+           ></script>
+       </section>
+    
+    
+    
+    
     <!-- faq section gone-->
     <section id="faq" class="faq">
 
@@ -393,32 +429,7 @@
 
     </section>
     <!-- portfolio section gone-->
-    <!-- ======= Testimonials Section ======= -->
-    <section id="map" class="map">
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-        <style type="text/css">
-          /* Always set the map height explicitly to define the size of the div
-           * element that contains the map. */
-          #map {
-            height: 100%;
-          }
-
-          /* Optional: Makes the sample page fill the window. */
-          html,
-          body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-          }
-        </style>
-        <script src="map.js"></script>
-
-        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-        <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmG6UTTn6EVWz3wEBQCYmLvSybLofmv2c&callback=initMap&libraries=&v=weekly"
-          async
-        ></script>
-    </section>
+    <!-- ======= Testimonials Section ======= --
 
     <!-- ======= Team Section ======= -->
 
