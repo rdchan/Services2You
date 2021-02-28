@@ -77,16 +77,16 @@ function test_input($data) {
 <h2>PHP Form Validation Example</h2>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
+  Name: <input type="text" name="name" value="">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+  E-mail: <input type="text" name="email" value="">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
-  Phone Number: <input type="text" name="phonenumber" value="<?php echo $phonenumber;?>">
+  Phone Number: <input type="text" name="phonenumber" value="">
     <span class="error">* <?php echo $phoneErr;?></span>
     <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
+  Website: <input type="text" name="website" value="">
   <span class="error"><?php echo $websiteErr;?></span>
   <br><br>
   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
