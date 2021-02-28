@@ -89,14 +89,16 @@ function test_input($data) {
 
 <?php
 try {
-    $dbh = new PDO('postgres://jonathan@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/app?sslmode=verify-full&sslrootcert=<your_certs_directory>/cc-ca.crt&options=--cluster=mild-bat-982',
-    'maxroach', null, array(
+    $dbh = new PDO('postgres://jonathan@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/app?sslmode=verify-full&sslrootcert=/Users/hansikasundaresan/Documents/hackutd2021/cc-ca.crt&options=--cluster=mild-bat-982',
+    'app', null, array(
       PDO::ATTR_ERRMODE          => PDO::ERRMODE_EXCEPTION,
       PDO::ATTR_EMULATE_PREPARES => true,
       PDO::ATTR_PERSISTENT => true
     ));
-
-  print "TEST";
+    
+  
+  $dbh->exec('INSERT INTO app.provider (id, name, phonenumber, email) VALUES (($_GET["id"];, $_GET["name"];, $_GET["phonenumber"];, $_GET["email"];)');
+    
   foreach ($dbh->query('SELECT id, name, phonenumber, email FROM app.provider') as $row) {
       print $row['id'] . ': ' . $row['name'] . ': ' . $row['phonenumber'] . $row['email'] . "\r\n";
   }
