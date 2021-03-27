@@ -45,7 +45,7 @@
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><br/>&times;</a>
   <div class="overlay-content">
-    <form method="post"><span color = "white" style="font-size:25px">
+    <form method="post" action="insert.php"><span color = "white" style="font-size:25px">
   Name: </span>&nbsp;</span> <input type="text" name="name" value="">
   <span class="error">* </span>
   <br><br><span style="font-size:25px">
@@ -55,19 +55,33 @@
   Phone Number: </span>&nbsp; <input type="text" name="phonenumber" value="">
     <span class="error">*</span>
     <br><br><span style="font-size:25px">
-  Zip-Code:  </span>&nbsp;<input type="text" name="website" value="">
+  Zip-Code:  </span>&nbsp;<input type="text" name="zipcode" value="">
   <span class="error"></span>
   <br><br><span style="font-size:25px">
   Help Required:</span>&nbsp; <textarea name="comment" rows="5" cols="40" background-color = "#707070"></textarea>
   <br><br><span style="font-size:25px">
   Service:&nbsp;&nbsp;</span>
-  <input type="radio" name="service" <?php if (isset($service) && $service=="plumbing") echo "checked";?>&nbsp;plumbing &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="electrcity") echo "checked";?>&nbsp;electricity &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="roofing") echo "checked";?>&nbsp;roofing &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="landscaping") echo "checked";?>&nbsp;landscaping &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="gardening") echo "checked";?>&nbsp;gardening &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="carpentry") echo "checked";?>&nbsp;carpentry &nbsp;&nbsp;
+  <label>
+      <input type="radio" name="service" value="plumbing">Plumbing
+  </label>
+  <label>
+      <input type="radio" name="service" value="electricity">Electricity
+  </label>
+  <label>
+      <input type="radio" name="service" value="roofing">Roofing
+  </label>
+  <label>
+      <input type="radio" name="service" value="landscaping">Landscaping
+  </label>
+  <label>
+      <input type="radio" name="service" value="gardening">Gardening
+  </label>
+  <label>
+      <input type="radio" name="service" value="carpentry">Carpentry (new!)
+  </label>
   <br><br>
+  <input hidden="true" type="text" id="latitude" name="latitude">
+  <input hidden="true" type="text" id="longitude" name="longitude">
   <input type="submit" name="submit" value="Submit">
 </form>
   </div>
@@ -94,12 +108,12 @@
   Help Required:&nbsp;</span> <textarea name="comment" rows="5" cols="40" background-color = "#707070"></textarea>
   <br><br><span style="font-size:25px">
   What service do you provide: </span>&nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="plumbing") echo "checked";?>&nbsp;plumbing &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="electrcity") echo "checked";?>&nbsp;electricity &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="roofing") echo "checked";?>&nbsp;roofing &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="landscaping") echo "checked";?>&nbsp;landscaping &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="gardening") echo "checked";?>&nbsp;gardening &nbsp;&nbsp;
-  <input type="radio" name="service" <?php if (isset($service) && $service=="carpentry") echo "checked";?>&nbsp;carpentry &nbsp;&nbsp;
+  <input type="radio" name="service" value="plumbing"<?php if (isset($service) && $service=="plumbing") echo "checked";?>&nbsp;plumbing &nbsp;&nbsp;
+  <input type="radio" name="service" value="electricity"<?php if (isset($service) && $service=="electrcity") echo "checked";?>&nbsp;electricity &nbsp;&nbsp;
+  <input type="radio" name="service" value="roofing"<?php if (isset($service) && $service=="roofing") echo "checked";?>&nbsp;roofing &nbsp;&nbsp;
+  <input type="radio" name="service" value="landscaping"<?php if (isset($service) && $service=="landscaping") echo "checked";?>&nbsp;landscaping &nbsp;&nbsp;
+      <input type="radio" name="service" value="gardening"<?php if (isset($service) && $service=="gardening") echo "checked";?>&nbsp;gardening &nbsp;&nbsp;
+      <input type="radio" name="service" value="carpentry"<?php if (isset($service) && $service=="carpentry") echo "checked";?>&nbsp;carpentry &nbsp;&nbsp;
   <br><br>
   <input type="submit" name="submit" value="Submit">
 </form>
