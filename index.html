@@ -49,18 +49,26 @@
   Name: </span>&nbsp;</span> <input type="text" name="name" value="">
   <span class="error">* </span>
   <br><br><span style="font-size:25px">
-  E-mail: </span>&nbsp; <input type="text" name="email" value="">
+  E-mail: </span>&nbsp; <input type="email" name="email" value="">
   <span class="error">* </span>
   <br><br><span style="font-size:25px">
   Phone Number: </span>&nbsp; <input type="text" name="phonenumber" value="">
     <span class="error">*</span>
     <br><br><span style="font-size:25px">
-  Zip-Code:  </span>&nbsp;<input type="text" name="zipcode" value="">
+  Zip-Code:  </span>&nbsp;<input type="number" name="zipcode" value="">
   <span class="error"></span>
   <br><br><span style="font-size:25px">
   Help Required:</span>&nbsp; <textarea name="comment" rows="5" cols="40" background-color = "#707070"></textarea>
   <br><br><span style="font-size:25px">
   Service:&nbsp;&nbsp;</span>
+  <!--
+  <input type="radio" name="service" <?php if (isset($service) && $service=="plumbing") echo "checked";?>&nbsp;plumbing &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="electrcity") echo "checked";?>&nbsp;electricity &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="roofing") echo "checked";?>&nbsp;roofing &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="landscaping") echo "checked";?>&nbsp;landscaping &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="gardening") echo "checked";?>&nbsp;gardening &nbsp;&nbsp;
+  <input type="radio" name="service" <?php if (isset($service) && $service=="carpentry") echo "checked";?>&nbsp;carpentry &nbsp;&nbsp;
+  -->
   <label>
       <input type="radio" name="service" value="plumbing">Plumbing
   </label>
@@ -77,7 +85,7 @@
       <input type="radio" name="service" value="gardening">Gardening
   </label>
   <label>
-      <input type="radio" name="service" value="carpentry">Carpentry (new!)
+      <input type="radio" name="service" value="carpentry">Carpentry 
   </label>
   <br><br>
   <input hidden="true" type="text" id="latitude" name="latitude">
@@ -321,7 +329,7 @@
     
     <section id="map" style="height:600px" class="map">
         
-
+            <!--dont waste map api calls while testing database
            <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
            <style type="text/css">
              /* Always set the map height explicitly to define the size of the div
@@ -335,10 +343,12 @@
            <script src="map.js"></script>
 
            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+           <!-- dont waste map api calls while testing database
            <script
              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOJ8hRUXK_EYZEuIPnmkZVAgvE0ajEkgU&callback=initMap&libraries=&v=weekly"
              async
            ></script>
+           -->
        </section>
     </div>
     
